@@ -1,0 +1,21 @@
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+.logo-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.loading-logo {
+	animation: bounce-motion 1s infinite;
+}
+
+@keyframes bounce-motion {
+	0%   { transform: translateY(0); }
+	50% { transform: translateY(10px); }
+	100% { transform: translateY(0); }
+}

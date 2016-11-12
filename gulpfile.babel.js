@@ -9,15 +9,17 @@ import webpackConfig from './webpack.config.babel';
 const paths = {
   allSrcJs: 'src/js/**/*.js',
   gulpFile: 'gulpfile.babel.js',
-  clientEntryPoint: 'src/js/app.js',
+  clientEntryPoint: 'src/js/index.js',
   webpackFile: 'webpack.config.babel.js',
-  libDir: 'lib',
   distDir: 'dist/js',
 };
 
+// @todo postcss
+// @todo html compiler + emoji tag
+
 gulp.task('clean', () => del(paths.libDir));
 
-gulp.task('main', ['lint', 'clean'], () =>
+gulp.task('main', ['clean'], () =>
   gulp.src(paths.clientEntryPoint)
     .pipe(webpack(webpackConfig))
     .pipe(gulp.dest(paths.distDir))
