@@ -14,4 +14,3 @@
 
   export default App;
 
-  console.log('app include');
